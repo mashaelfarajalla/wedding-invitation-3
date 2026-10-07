@@ -1,0 +1,3304 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>دعوة زفاف</title>
+    <link
+      rel="preload"
+      href="fonts/el-messiri-arabic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/rakkas-arabic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <style>
+      /* جميع الخطوط محفوظة محلياً في مجلد fonts */
+      @font-face {
+        font-family: "El Messiri";
+        font-style: normal;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url(fonts/el-messiri-arabic.woff2) format("woff2");
+        unicode-range:
+          U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1,
+          U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF,
+          U+FE70-FE74, U+FE76-FEFC;
+      }
+      @font-face {
+        font-family: "El Messiri";
+        font-style: normal;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url(fonts/el-messiri-latin.woff2) format("woff2");
+        unicode-range:
+          U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Amiri";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(fonts/amiri-arabic.woff2) format("woff2");
+        unicode-range:
+          U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1,
+          U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF,
+          U+FE70-FE74, U+FE76-FEFC;
+      }
+      @font-face {
+        font-family: "Amiri";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(fonts/amiri-latin.woff2) format("woff2");
+        unicode-range:
+          U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Amiri";
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url(fonts/amiri-italic-arabic.woff2) format("woff2");
+        unicode-range:
+          U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1,
+          U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF,
+          U+FE70-FE74, U+FE76-FEFC;
+      }
+      @font-face {
+        font-family: "Amiri";
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url(fonts/amiri-italic-latin.woff2) format("woff2");
+        unicode-range:
+          U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Rakkas";
+        font-style: normal;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url(fonts/rakkas-arabic.woff2) format("woff2");
+        unicode-range:
+          U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1,
+          U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF,
+          U+FE70-FE74, U+FE76-FEFC;
+      }
+      @font-face {
+        font-family: "Rakkas";
+        font-style: normal;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url(fonts/rakkas-latin.woff2) format("woff2");
+        unicode-range:
+          U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      :root {
+        --cream: #f3ede0;
+        --cream-deep: #e9e0cd;
+        --ink: #3c2f27;
+        --ink-soft: #6b5a4d;
+        --gold: #b7893f;
+        --gold-light: #d9b877;
+        --gold-deep: #9c7333;
+        --gold-tint: #fbf3e4;
+        --overlay: rgba(28, 20, 14, 0.42);
+        /* مقاييس موحّدة للأقسام والبطاقات */
+        --radius: 18px;
+        --shadow: 0 14px 34px rgba(60, 47, 39, 0.1);
+        --head-gap: 44px; /* المسافة بين عنوان القسم ومحتواه */
+        --heart: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z'/%3E%3C/svg%3E");
+      }
+      /* قلب ذهبي موحّد بدل رموز الإيموجي (يأخذ لون النص) */
+      .heart {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+        background: currentColor;
+        -webkit-mask: var(--heart) center/contain no-repeat;
+        mask: var(--heart) center/contain no-repeat;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--cream);
+        color: var(--ink);
+        font-family: "El Messiri", sans-serif;
+        overflow-x: hidden;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .kicker {
+        font-family: "Amiri", serif;
+        font-size: 15px;
+        color: var(--gold);
+        text-transform: none;
+      }
+
+      section {
+        position: relative;
+        padding: 90px 20px;
+      }
+      @media (max-width: 480px) {
+        section {
+          padding: 72px 20px;
+        }
+      }
+
+      /* reveal animation */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.9s ease,
+          transform 0.9s ease;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ---------- HERO ---------- */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        min-height: 100vh;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+        text-align: center;
+        padding: 60px 24px 70px;
+      }
+      @media (max-width: 480px) {
+        .hero {
+          padding: 34px 18px 34px;
+        }
+        .hero h1 {
+          margin: 8px 0 4px;
+        }
+        .hero .date-line {
+          margin-top: 10px;
+        }
+        .hero-top {
+          top: 20px;
+        }
+        .hero-verse {
+          margin-top: 12px;
+        }
+        .scroll-cue {
+          margin-top: 16px;
+          height: 28px;
+        }
+      }
+      @media (max-height: 560px) {
+        .hero-verse {
+          display: none;
+        }
+      }
+      .hero::before,
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+      }
+      .hero::before {
+        background-image: url("تنزيل (9).jpg");
+        background-size: cover;
+        background-position: center bottom;
+        filter: blur(35px) brightness(0.55);
+        transform: scale(1.15);
+        z-index: 0;
+      }
+      .hero::after {
+        background-image:
+          linear-gradient(
+            180deg,
+            rgba(20, 14, 10, 0.55) 0%,
+            rgba(28, 20, 14, 0) 22%,
+            rgba(28, 20, 14, 0.12) 45%,
+            var(--overlay) 100%
+          ),
+          url("تنزيل (9).jpg");
+        background-size: cover;
+        background-position: center bottom;
+        z-index: 1;
+      }
+      @media (min-width: 820px) {
+        .hero::before {
+          background-image: url("hero-desktop.jpg");
+        }
+        .hero::after {
+          background-image:
+            linear-gradient(
+              180deg,
+              rgba(20, 14, 10, 0.55) 0%,
+              rgba(28, 20, 14, 0) 22%,
+              rgba(28, 20, 14, 0.12) 45%,
+              var(--overlay) 100%
+            ),
+            url("hero-desktop.jpg");
+          background-size: cover;
+        }
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+      }
+      @media (max-width: 480px) {
+        .hero {
+          justify-content: center;
+          gap: clamp(28px, 7svh, 56px);
+        }
+      }
+      .hero-top {
+        position: relative;
+        z-index: 2;
+        width: min(760px, 100%);
+        text-align: center;
+      }
+      .hero-top .bismillah {
+        color: #f6ecd9;
+        font-family: "Amiri", serif;
+        font-weight: 700;
+        font-size: clamp(17px, 2vw, 19px);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+      }
+      .hero .kicker {
+        display: inline-block;
+        font-family: "El Messiri", sans-serif;
+        font-weight: 500;
+        font-size: clamp(15px, 1.8vw, 17px);
+        line-height: 1.9;
+        color: var(--gold-light);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+      }
+      .hero h1 {
+        font-family: "Rakkas", serif;
+        font-weight: 700;
+        font-size: clamp(44px, 8vw, 76px);
+        line-height: 1.15;
+        margin: 14px 0 6px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      .hero .amp {
+        display: block;
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 700;
+        font-size: clamp(22px, 3vw, 28px);
+        line-height: 1.2;
+        color: var(--gold-light);
+        margin: 4px 0;
+      }
+      .hero .date-line {
+        margin-top: 20px;
+        font-family: "El Messiri", sans-serif;
+        font-weight: 600;
+        font-size: clamp(15px, 1.7vw, 17px);
+        color: #f6ecd9;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+      }
+      .hero-verse {
+        margin-top: 14px;
+        max-width: 100%;
+        font-family: "Amiri", serif;
+        font-size: clamp(15px, 1.6vw, 17px);
+        line-height: 2.1;
+        color: #fff;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+      }
+      .hero-verse-source {
+        margin-top: 6px;
+        font-family: "El Messiri", sans-serif;
+        font-size: 13px;
+        color: var(--gold-light);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      }
+      .scroll-cue {
+        margin-top: 34px;
+        width: 1px;
+        height: 46px;
+        background: linear-gradient(#fff, transparent);
+        position: relative;
+        animation: cue 2.2s ease-in-out infinite;
+      }
+      @keyframes cue {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      /* صورة الموبايل فاتحة (كريمي) فالنص الأبيض يضيع عليها:
+         نستبدل الطبقة الداكنة بطبقة كريمية خفيفة ونقلب ألوان النص للداكن */
+      @media (max-width: 819px) {
+        .hero::after {
+          background-image:
+            radial-gradient(
+              ellipse 90% 70% at 50% 55%,
+              rgba(243, 237, 224, 0.72) 0%,
+              rgba(243, 237, 224, 0.35) 60%,
+              rgba(243, 237, 224, 0) 100%
+            ),
+            url("تنزيل (9).jpg");
+        }
+        .hero-content {
+          color: var(--ink);
+        }
+        .hero-top .bismillah {
+          color: var(--gold-deep);
+          font-size: 19px;
+          text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+        }
+        .hero-verse {
+          color: var(--ink);
+          font-size: 17px;
+          line-height: 2.2;
+          text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+        }
+        .hero-verse-source {
+          color: var(--gold-deep);
+          font-size: 14px;
+          font-weight: 600;
+          text-shadow: none;
+        }
+        .hero .kicker {
+          color: var(--gold-deep);
+          font-weight: 600;
+          font-size: 17px;
+          text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+        }
+        .hero h1 {
+          color: var(--ink);
+          text-shadow: 0 2px 8px rgba(255, 255, 255, 0.7);
+        }
+        .hero .amp {
+          color: var(--gold);
+        }
+        .hero .date-line {
+          color: var(--ink-soft);
+          font-size: 16px;
+          text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+        }
+        .scroll-cue {
+          background: linear-gradient(var(--gold), transparent);
+        }
+      }
+
+      /* ---------- COUNTDOWN ---------- */
+      .countdown-section {
+        text-align: center;
+      }
+      .section-title {
+        font-family: "Rakkas", serif;
+        font-weight: 700;
+        font-size: clamp(28px, 5vw, 40px);
+        line-height: 1.3;
+        color: var(--ink);
+      }
+      .section-sub {
+        font-size: 15px;
+        line-height: 1.8;
+        color: var(--ink-soft);
+        margin-top: 8px;
+      }
+      .countdown {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 96px));
+        justify-content: center;
+        gap: clamp(8px, 2.5vw, 16px);
+        margin-top: var(--head-gap);
+      }
+      .countdown .box {
+        background: #fff;
+        border: 1px solid var(--cream-deep);
+        box-shadow: var(--shadow);
+        border-radius: 14px;
+        min-width: 0;
+        padding: clamp(14px, 4vw, 20px) 4px;
+      }
+      .countdown .num {
+        font-family: "Rakkas", serif;
+        font-size: clamp(26px, 8vw, 38px);
+        color: var(--gold);
+        line-height: 1;
+      }
+      .countdown .label {
+        margin-top: 8px;
+        font-size: clamp(11px, 3.2vw, 13px);
+        color: var(--ink-soft);
+      }
+
+      /* ---------- DETAILS ---------- */
+      .details-section {
+        background: var(--cream-deep);
+        text-align: center;
+      }
+      .cards {
+        display: flex;
+        gap: 26px;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 900px;
+        margin: var(--head-gap) auto 0;
+      }
+      .card {
+        background: #fff;
+        border-radius: var(--radius);
+        overflow: hidden;
+        width: min(320px, 100%);
+        box-shadow: var(--shadow);
+        text-align: center;
+      }
+      .card .card-img {
+        width: 100%;
+        display: block;
+        aspect-ratio: 669/478;
+        object-fit: cover;
+        object-position: center;
+      }
+      .calendar-frame {
+        position: relative;
+      }
+      .calendar-frame .date-mark {
+        position: absolute;
+        left: 27.5%;
+        top: 91%;
+        width: 44px;
+        height: 44px;
+        transform: translate(-50%, -50%);
+        color: var(--gold);
+        animation: heartbeat 2.4s ease-in-out infinite;
+        pointer-events: none;
+      }
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          transform: translate(-50%, -50%) scale(1.15);
+        }
+      }
+      .card .card-body {
+        padding: 26px 22px 30px;
+      }
+      .card h3 {
+        font-family: "Rakkas", serif;
+        font-size: 22px;
+        color: var(--ink);
+        margin-bottom: 10px;
+      }
+      .card p {
+        font-size: 14.5px;
+        color: var(--ink-soft);
+        line-height: 1.9;
+      }
+      .card .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        margin-top: 16px;
+        padding: 10px 26px;
+        border-radius: 999px;
+        background: var(--gold);
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: background 0.25s ease;
+      }
+      .card .btn:hover {
+        background: var(--gold-deep);
+      }
+      /* mobile: horizontal, swipeable, auto-advancing cards */
+      @media (max-width: 700px) {
+        .cards {
+          flex-wrap: nowrap;
+          justify-content: flex-start;
+          gap: 16px;
+          margin: var(--head-gap) -20px 0;
+          padding: 6px 12% 30px;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          scrollbar-width: none;
+          -webkit-overflow-scrolling: touch;
+        }
+        .cards::-webkit-scrollbar {
+          display: none;
+        }
+        .card {
+          flex: 0 0 76%;
+          width: auto;
+          scroll-snap-align: center;
+        }
+      }
+      .icon {
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
+      }
+
+      /* ---------- PROGRAM / TIMELINE ---------- */
+      .program-section {
+        text-align: center;
+      }
+      /* zigzag path: rows alternate sides, joined by curved gold arrows */
+      .timeline {
+        --row: 64px;
+        --gap: 8px;
+        --curve: 28px;
+        --step: 2s; /* delay between one item and the next */
+        position: relative;
+        max-width: 380px;
+        margin: var(--head-gap) auto 0;
+        padding: 0 var(--curve);
+      }
+      .tl-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        height: var(--row);
+        margin-bottom: var(--gap);
+        text-align: right;
+      }
+      .tl-item:last-child {
+        margin-bottom: 0;
+      }
+      .tl-item:nth-child(even) {
+        flex-direction: row-reverse;
+        text-align: left;
+      }
+      /* horizontal line running from the text to the curve */
+      .tl-item::before {
+        content: "";
+        order: 1;
+        flex: 1;
+        min-width: 16px;
+        height: 1.5px;
+        background: var(--gold-light);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.7s ease calc(var(--i) * var(--step) + 0.5s);
+      }
+      .tl-item:nth-child(even)::before {
+        transform-origin: left;
+      }
+      .tl-item:last-child::before {
+        background: linear-gradient(to left, var(--gold-light), transparent);
+      }
+      .tl-item:nth-child(even):last-child::before {
+        background: linear-gradient(to right, var(--gold-light), transparent);
+      }
+      /* U-turn curve down to the next row */
+      .tl-item::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: var(--curve);
+        height: calc(var(--row) + var(--gap));
+        border: 1.5px solid var(--gold-light);
+        opacity: 0;
+        transition: opacity 0.6s ease calc(var(--i) * var(--step) + 1.2s);
+      }
+      .tl-item:nth-child(odd)::after {
+        right: 100%;
+        border-right: none;
+        border-radius: var(--row) 0 0 var(--row);
+      }
+      .tl-item:nth-child(even)::after {
+        left: 100%;
+        border-left: none;
+        border-radius: 0 var(--row) var(--row) 0;
+      }
+      .tl-item:last-child::after {
+        display: none;
+      }
+      .tl-icon {
+        flex: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--gold-tint);
+        border: 1.5px solid var(--gold-light);
+        color: var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        box-shadow: 0 6px 16px rgba(60, 47, 39, 0.08);
+      }
+      .tl-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+      /* arrowhead where the curve meets the next icon */
+      .tl-item:not(:first-child) .tl-icon::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 7px;
+        height: 7px;
+        border-top: 1.5px solid var(--gold-light);
+        border-right: 1.5px solid var(--gold-light);
+      }
+      .tl-item:nth-child(even) .tl-icon::before {
+        left: -11px;
+        transform: translateY(-50%) rotate(45deg);
+      }
+      .tl-item:nth-child(odd) .tl-icon::before {
+        right: -11px;
+        transform: translateY(-50%) rotate(-135deg);
+      }
+      .tl-body {
+        white-space: nowrap;
+      }
+      .tl-time {
+        font-family: "Rakkas", serif;
+        font-size: 18px;
+        color: var(--gold);
+        line-height: 1.3;
+      }
+      .tl-label {
+        font-size: 13.5px;
+        color: var(--ink-soft);
+        line-height: 1.5;
+      }
+
+      /* draw the path step by step once the section scrolls into view */
+      .timeline.reveal {
+        transform: none;
+        opacity: 1;
+      }
+      .tl-item:nth-child(1) {
+        --i: 0;
+      }
+      .tl-item:nth-child(2) {
+        --i: 1;
+      }
+      .tl-item:nth-child(3) {
+        --i: 2;
+      }
+      .tl-item:nth-child(4) {
+        --i: 3;
+      }
+      .tl-item:nth-child(5) {
+        --i: 4;
+      }
+      .tl-item:nth-child(6) {
+        --i: 5;
+      }
+      .tl-item:nth-child(7) {
+        --i: 6;
+      }
+      .tl-item:nth-child(8) {
+        --i: 7;
+      }
+      .tl-icon,
+      .tl-body {
+        opacity: 0;
+        transform: scale(0.6);
+        transition:
+          opacity 0.5s ease calc(var(--i) * var(--step)),
+          transform 0.5s cubic-bezier(0.3, 1.5, 0.6, 1)
+            calc(var(--i) * var(--step));
+      }
+      .tl-body {
+        transform: translateY(6px);
+      }
+      .timeline.in .tl-icon,
+      .timeline.in .tl-body {
+        opacity: 1;
+        transform: none;
+      }
+      .timeline.in .tl-item::before {
+        transform: scaleX(1);
+      }
+      .timeline.in .tl-item::after {
+        opacity: 1;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .tl-icon,
+        .tl-body,
+        .tl-item::before,
+        .tl-item::after {
+          transition-delay: 0s !important;
+        }
+      }
+
+      /* ---------- MAP ---------- */
+      .map-section {
+        text-align: center;
+      }
+      .map-wrap {
+        position: relative;
+        max-width: 900px;
+        margin: var(--head-gap) auto 0;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        aspect-ratio: 16/9;
+        border: 1px solid var(--cream-deep);
+        background: var(--cream-deep);
+      }
+      @media (max-width: 600px) {
+        .map-wrap {
+          aspect-ratio: 4/3.4;
+        }
+      }
+      .map-note {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 18px auto 0;
+        font-size: clamp(14px, 1.6vw, 16px);
+        font-weight: 600;
+        color: var(--ink-soft);
+      }
+      .map-note .icon {
+        width: 20px;
+        height: 20px;
+        color: var(--gold);
+        flex-shrink: 0;
+      }
+      /* map is embedded by coordinates (no Google marker); our heart pin sits at the center */
+      .map-wrap iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+        filter: saturate(0.45) sepia(0.18) brightness(1.03) contrast(0.95);
+      }
+      .map-wrap::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: rgba(243, 237, 224, 0.12);
+        box-shadow: inset 0 0 60px rgba(60, 47, 39, 0.1);
+      }
+      .map-pin {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 46px;
+        height: 58px;
+        transform: translate(-50%, -100%);
+        z-index: 2;
+        pointer-events: none;
+        filter: drop-shadow(0 6px 10px rgba(60, 47, 39, 0.35));
+        animation: pin-bob 2.6s ease-in-out infinite;
+      }
+      .map-pin svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .map-pin-pulse {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 22px;
+        height: 9px;
+        border-radius: 50%;
+        background: rgba(183, 137, 63, 0.45);
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        pointer-events: none;
+        animation: pin-pulse 2.6s ease-out infinite;
+      }
+      @keyframes pin-bob {
+        0%,
+        100% {
+          transform: translate(-50%, -100%);
+        }
+        50% {
+          transform: translate(-50%, calc(-100% - 6px));
+        }
+      }
+      @keyframes pin-pulse {
+        0% {
+          opacity: 0.9;
+          transform: translate(-50%, -50%) scale(0.6);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(2.4);
+        }
+      }
+      .map-open {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        z-index: 3;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 9px 16px;
+        border-radius: 999px;
+        background: #fff;
+        color: var(--gold);
+        font-size: 13.5px;
+        font-weight: 500;
+        text-decoration: none;
+        box-shadow: 0 6px 18px rgba(60, 47, 39, 0.15);
+        transition:
+          background 0.25s ease,
+          color 0.25s ease;
+      }
+      .map-open:hover {
+        background: var(--gold);
+        color: #fff;
+      }
+      .map-label {
+        position: absolute;
+        left: 50%;
+        bottom: 34px;
+        z-index: 3;
+        transform: translateX(-50%);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 26px;
+        border-radius: 999px;
+        background: var(--gold);
+        color: #fff;
+        font-size: 14.5px;
+        font-weight: 500;
+        white-space: nowrap;
+        text-decoration: none;
+        box-shadow: 0 10px 24px rgba(60, 47, 39, 0.28);
+        transition: background 0.25s ease;
+      }
+      .map-label:hover {
+        background: var(--gold-deep);
+      }
+      @media (max-width: 480px) {
+        .map-label {
+          font-size: 13px;
+          padding: 10px 20px;
+          bottom: 30px;
+        }
+        .map-open {
+          font-size: 12.5px;
+          padding: 8px 12px;
+        }
+      }
+
+      /* ---------- PHOTO-TEXTURED SECTION BACKGROUNDS ---------- */
+      .photo-bg::before,
+      .photo-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+      }
+      .photo-bg::before {
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+      }
+      .photo-bg::after {
+        z-index: 1;
+      }
+      .photo-bg > * {
+        position: relative;
+        z-index: 2;
+      }
+
+      .countdown-section.photo-bg::before {
+        background-image: url("تنزيل (45).jpg");
+      }
+      .countdown-section.photo-bg::after {
+        background: rgba(243, 237, 224, 0.88);
+      }
+
+      .map-section.photo-bg::before {
+        background-image: url("family 🔗.jpg");
+      }
+      /* تناوب الخلفيات: فاتح ← داكن ← فاتح ← داكن */
+      .map-section.photo-bg::after {
+        background: rgba(233, 224, 205, 0.9);
+      }
+
+      .rsvp-section.photo-bg::before {
+        background-image: url("(16).jpg");
+      }
+      .rsvp-section.photo-bg::after {
+        background: rgba(233, 224, 205, 0.9);
+      }
+
+      /* ---------- CLOSING / RSVP ---------- */
+      .closing {
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+        text-align: center;
+        padding: 120px 20px;
+        background:
+          radial-gradient(
+            ellipse at center,
+            rgba(28, 20, 14, 0.35) 0%,
+            rgba(28, 20, 14, 0.72) 100%
+          ),
+          url("تنزيل (45).jpg") center/cover no-repeat;
+      }
+      @media (min-width: 900px) {
+        .closing {
+          background-attachment: scroll, fixed;
+        }
+      }
+      .closing-card {
+        position: relative;
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 56px 34px 50px;
+        border: 1px solid rgba(217, 184, 119, 0.55);
+        border-radius: 4px;
+        background: rgba(28, 20, 14, 0.28);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+      }
+      /* inner thin frame */
+      .closing-card::before {
+        content: "";
+        position: absolute;
+        inset: 9px;
+        border: 1px solid rgba(217, 184, 119, 0.28);
+        border-radius: 2px;
+        pointer-events: none;
+      }
+      /* corner ornaments */
+      .closing-card .corner {
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        border-color: var(--gold-light);
+        border-style: solid;
+        border-width: 0;
+      }
+      .closing-card .corner.tl {
+        top: -1px;
+        left: -1px;
+        border-top-width: 2px;
+        border-left-width: 2px;
+      }
+      .closing-card .corner.tr {
+        top: -1px;
+        right: -1px;
+        border-top-width: 2px;
+        border-right-width: 2px;
+      }
+      .closing-card .corner.bl {
+        bottom: -1px;
+        left: -1px;
+        border-bottom-width: 2px;
+        border-left-width: 2px;
+      }
+      .closing-card .corner.br {
+        bottom: -1px;
+        right: -1px;
+        border-bottom-width: 2px;
+        border-right-width: 2px;
+      }
+
+      .closing .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--gold-light);
+        font-size: 16px;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      }
+      .closing .kicker::before,
+      .closing .kicker::after {
+        content: "";
+        width: 34px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold-light));
+      }
+      .closing .kicker::after {
+        background: linear-gradient(90deg, var(--gold-light), transparent);
+      }
+      .closing h2 {
+        font-family: "Rakkas", serif;
+        font-size: clamp(30px, 5.5vw, 46px);
+        line-height: 1.4;
+        margin: 16px 0 4px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      .closing p {
+        max-width: 480px;
+        margin: 0 auto;
+        font-size: 15.5px;
+        line-height: 2;
+        color: #f2ece2;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      }
+      .rsvp-btn {
+        position: relative;
+        overflow: hidden;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 34px;
+        padding: 15px 48px;
+        border-radius: 999px;
+        background: linear-gradient(
+          135deg,
+          var(--gold-light) 0%,
+          var(--gold) 55%,
+          var(--gold-deep) 100%
+        );
+        color: #fff;
+        text-decoration: none;
+        font-size: 15.5px;
+        font-weight: 500;
+        box-shadow:
+          0 12px 28px rgba(0, 0, 0, 0.3),
+          0 0 0 4px rgba(217, 184, 119, 0.22);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .rsvp-btn::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -60%;
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(
+          100deg,
+          transparent,
+          rgba(255, 255, 255, 0.45),
+          transparent
+        );
+        transform: skewX(-20deg);
+        animation: btn-shine 3.2s ease-in-out infinite;
+      }
+      @keyframes btn-shine {
+        0% {
+          left: -60%;
+        }
+        60%,
+        100% {
+          left: 130%;
+        }
+      }
+      .rsvp-btn .icon {
+        animation: cue 1.8s ease-in-out infinite;
+      }
+      .rsvp-btn:hover {
+        transform: translateY(-3px);
+        box-shadow:
+          0 18px 34px rgba(0, 0, 0, 0.35),
+          0 0 0 6px rgba(217, 184, 119, 0.3);
+      }
+      @media (max-width: 520px) {
+        .closing {
+          padding: 90px 16px;
+        }
+        .closing-card {
+          padding: 46px 20px 40px;
+        }
+      }
+
+      /* ---------- RSVP FORM ---------- */
+      .rsvp-section {
+        background: var(--cream-deep);
+        text-align: center;
+      }
+      .rsvp-form {
+        max-width: 520px;
+        margin: var(--head-gap) auto 0;
+        background: #fff;
+        border-radius: var(--radius);
+        padding: 40px 30px;
+        box-shadow: var(--shadow);
+        text-align: right;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group label {
+        display: block;
+        font-size: 14px;
+        color: var(--ink-soft);
+        margin-bottom: 8px;
+      }
+      .form-group input[type="text"],
+      .form-group input[type="tel"],
+      .form-group input[type="number"],
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid var(--cream-deep);
+        border-radius: 10px;
+        font-family: "El Messiri", sans-serif;
+        font-size: 14.5px;
+        color: var(--ink);
+        background: var(--cream);
+      }
+      .form-group textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+      /* custom number stepper */
+      .form-group input[type="number"] {
+        -moz-appearance: textfield;
+        appearance: textfield;
+      }
+      .form-group input[type="number"]::-webkit-inner-spin-button,
+      .form-group input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      .stepper {
+        position: relative;
+      }
+      .stepper input[type="number"] {
+        padding-left: 44px;
+      }
+      .stepper-arrows {
+        position: absolute;
+        left: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+      .stepper-btn {
+        width: 26px;
+        height: 17px;
+        padding: 0;
+        border: 1px solid rgba(183, 137, 63, 0.45);
+        background: linear-gradient(180deg, #fff 0%, var(--cream) 100%);
+        color: var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease,
+          border-color 0.2s ease,
+          opacity 0.2s ease;
+      }
+      .stepper-btn.up {
+        border-radius: 7px 7px 3px 3px;
+      }
+      .stepper-btn.down {
+        border-radius: 3px 3px 7px 7px;
+      }
+      .stepper-btn svg {
+        width: 10px;
+        height: 10px;
+      }
+      .stepper-btn:hover {
+        background: linear-gradient(
+          135deg,
+          var(--gold-light) 0%,
+          var(--gold) 100%
+        );
+        border-color: var(--gold);
+        color: #fff;
+      }
+      .stepper-btn:active {
+        transform: scale(0.92);
+      }
+      .stepper-btn:disabled {
+        opacity: 0.35;
+        cursor: default;
+        background: var(--cream);
+        color: var(--gold);
+        transform: none;
+      }
+      .attend-options {
+        display: flex;
+        gap: 12px;
+      }
+      .attend-options label {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 10px;
+        border: 1px solid var(--cream-deep);
+        border-radius: 10px;
+        font-size: 14px;
+        color: var(--ink);
+        cursor: pointer;
+        transition:
+          border-color 0.2s ease,
+          background 0.2s ease;
+      }
+      .attend-options input {
+        accent-color: var(--gold);
+      }
+      .attend-options label:has(input:checked) {
+        border-color: var(--gold);
+        background: var(--gold-tint);
+      }
+      .form-submit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        width: 100%;
+        padding: 14px;
+        margin-top: 6px;
+        border: none;
+        border-radius: 999px;
+        background: var(--gold);
+        color: #fff;
+        font-family: "El Messiri", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.25s ease;
+      }
+      .form-submit:hover {
+        background: var(--gold-deep);
+      }
+      .rsvp-thanks {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        margin-top: 18px;
+        font-size: 14px;
+        color: #4a7a4f;
+      }
+      .rsvp-thanks.show {
+        display: flex;
+      }
+      .rsvp-thanks .icon {
+        width: 16px;
+        height: 16px;
+      }
+      .wish-count {
+        font-size: 11.5px;
+        color: var(--ink-soft);
+        opacity: 0.6;
+        text-align: left;
+        margin-top: 4px;
+      }
+
+      /* ---------- WISHES WALL ---------- */
+      .wishes-section {
+        overflow: hidden;
+        text-align: center;
+        padding: 90px 0;
+        background: linear-gradient(180deg, var(--cream), #efe7d6);
+        color: var(--ink);
+      }
+      /* القسم بلا حواف جانبية لتمتد الصفوف المتحركة، فنعطي العناوين حوافها */
+      .wishes-section > .kicker,
+      .wishes-section > .section-title,
+      .wishes-section > .section-sub {
+        padding: 0 20px;
+      }
+      .wishes-section .kicker {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--gold);
+      }
+      .wishes-ornament {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin: 18px auto 0;
+        color: var(--gold);
+      }
+      .wishes-ornament span {
+        width: 70px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold));
+      }
+      .wishes-ornament span:last-child {
+        background: linear-gradient(90deg, var(--gold), transparent);
+      }
+      .wishes-ornament svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .sparkle {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold-light);
+        box-shadow: 0 0 12px 3px rgba(217, 184, 119, 0.6);
+        animation: twinkle 3s ease-in-out infinite;
+      }
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.15;
+          transform: scale(0.6);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+
+      /* ---- المباركة المميزة (تتبدل تلقائيًا) ---- */
+      .wish-spotlight {
+        display: none;
+        position: relative;
+        width: min(640px, calc(100% - 40px));
+        margin: var(--head-gap) auto 0;
+        padding: 46px 34px 28px;
+        border: 1px solid rgba(183, 137, 63, 0.3);
+        border-radius: var(--radius);
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+      .wish-spotlight.show {
+        display: block;
+      }
+      .spot-badge {
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 5px 18px;
+        border-radius: 20px;
+        white-space: nowrap;
+        background: linear-gradient(135deg, var(--gold-light), var(--gold));
+        color: #fff;
+        font-size: 12.5px;
+        box-shadow: 0 6px 14px rgba(156, 115, 51, 0.3);
+      }
+      .spot-body {
+        transition:
+          opacity 0.5s ease,
+          transform 0.5s ease;
+      }
+      .spot-body.fading {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      .spot-text {
+        font-family: "Amiri", serif;
+        font-size: clamp(19px, 3.2vw, 24px);
+        line-height: 1.9;
+        color: var(--ink);
+        word-break: break-word;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .spot-text::before,
+      .spot-text::after {
+        color: var(--gold);
+        font-size: 1.3em;
+      }
+      .spot-text::before {
+        content: "\201D ";
+      }
+      .spot-text::after {
+        content: " \201C";
+      }
+      .spot-name {
+        margin-top: 14px;
+        font-family: "Rakkas", serif;
+        font-size: 22px;
+        color: var(--gold);
+      }
+      .spot-dots {
+        display: flex;
+        justify-content: center;
+        gap: 7px;
+        margin-top: 20px;
+      }
+      .spot-dots button {
+        width: 7px;
+        height: 7px;
+        padding: 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        background: rgba(217, 184, 119, 0.35);
+        transition:
+          width 0.3s ease,
+          background 0.3s ease;
+      }
+      .spot-dots button.active {
+        width: 22px;
+        background: var(--gold);
+      }
+
+      .wishes-wall {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+      .wish-row {
+        overflow: hidden;
+        direction: ltr;
+        -webkit-mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 8%,
+          #000 92%,
+          transparent
+        );
+        mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 8%,
+          #000 92%,
+          transparent
+        );
+      }
+      .wish-track {
+        display: flex;
+        gap: 20px;
+        width: max-content;
+        padding: 14px 0;
+        animation: wish-scroll var(--dur, 40s) linear infinite;
+      }
+      .wish-row.reverse .wish-track {
+        animation-direction: reverse;
+      }
+      .wish-row:hover .wish-track {
+        animation-play-state: paused;
+      }
+      @keyframes wish-scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      /* عدد قليل من المباركات: عرض ثابت بدون حركة */
+      .wishes-wall.static {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 34px 26px;
+        padding: 14px 20px 0;
+      }
+
+      .wish-card {
+        direction: rtl;
+        text-align: right;
+        flex: none;
+        position: relative;
+        width: 280px;
+        padding: 36px 24px 16px;
+        border-radius: var(--radius);
+        background: linear-gradient(160deg, #fff, #fbf5ea);
+        color: var(--ink);
+        cursor: pointer;
+        box-shadow:
+          0 14px 30px rgba(60, 47, 39, 0.14),
+          0 0 0 1px rgba(183, 137, 63, 0.15);
+        transform: rotate(var(--tilt, 0deg));
+        transition:
+          transform 0.4s cubic-bezier(0.2, 0.8, 0.3, 1.2),
+          box-shadow 0.4s ease;
+      }
+      .wish-card:hover {
+        transform: rotate(0) translateY(-8px) scale(1.03);
+        box-shadow:
+          0 22px 40px rgba(60, 47, 39, 0.2),
+          0 0 0 2px rgba(183, 137, 63, 0.45);
+      }
+      .wish-card::before {
+        content: "\201D";
+        position: absolute;
+        top: 4px;
+        left: 16px;
+        font-family: "Amiri", serif;
+        font-size: 70px;
+        line-height: 1;
+        color: rgba(183, 137, 63, 0.22);
+      }
+      .wish-card::after {
+        content: "";
+        position: absolute;
+        inset: 7px;
+        border-radius: 13px;
+        border: 1px dashed rgba(183, 137, 63, 0.32);
+        pointer-events: none;
+      }
+      /* ختم الشمع */
+      .seal {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(
+          circle at 35% 30%,
+          #ecd096,
+          var(--gold) 55%,
+          #7f5b25
+        );
+        border: 2px solid rgba(255, 240, 210, 0.45);
+        color: #fff;
+        font-family: "Rakkas", serif;
+        font-size: 20px;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        box-shadow:
+          0 0 0 3px rgba(183, 137, 63, 0.3),
+          0 6px 14px rgba(0, 0, 0, 0.3),
+          inset 0 -3px 5px rgba(0, 0, 0, 0.2);
+      }
+      .wish-card .seal {
+        position: absolute;
+        top: -20px;
+        right: 22px;
+      }
+      /* نص المباركة على سطور ورقة رسالة */
+      .wish-card .wish-text {
+        font-family: "Amiri", serif;
+        font-size: 16px;
+        line-height: 30px;
+        background: repeating-linear-gradient(
+          180deg,
+          transparent 0 29px,
+          rgba(183, 137, 63, 0.16) 29px 30px
+        );
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: 90px;
+        word-break: break-word;
+      }
+      .wish-card .wish-foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .wish-card .wish-sign {
+        font-family: "Rakkas", serif;
+        font-size: 17px;
+        color: var(--gold);
+      }
+      .wish-card .wish-more {
+        font-size: 12px;
+        color: var(--ink-soft);
+        opacity: 0.7;
+        white-space: nowrap;
+      }
+      .wish-card .wish-heart {
+        color: #c99a52;
+        font-size: 15px;
+        transition:
+          transform 0.3s ease,
+          color 0.3s ease;
+      }
+      .seal .heart {
+        width: 0.8em;
+        height: 0.8em;
+      }
+      .wish-card:hover .wish-heart {
+        transform: scale(1.3);
+        color: #b5473f;
+      }
+      .wish-card.is-new {
+        animation: wish-pop 1s ease;
+      }
+      .wish-card.skeleton {
+        cursor: default;
+        pointer-events: none;
+      }
+      .wish-card.skeleton .seal {
+        animation: sk-pulse 1.4s ease-in-out infinite;
+      }
+      .sk-line {
+        display: block;
+        height: 12px;
+        margin: 10px 0;
+        border-radius: 6px;
+        background: linear-gradient(
+          90deg,
+          #eadfc8 25%,
+          #f7f0e2 50%,
+          #eadfc8 75%
+        );
+        background-size: 200% 100%;
+        animation: sk-shimmer 1.3s linear infinite;
+      }
+      .sk-line.short {
+        width: 55%;
+      }
+      @keyframes sk-shimmer {
+        from {
+          background-position: 200% 0;
+        }
+        to {
+          background-position: -200% 0;
+        }
+      }
+      @keyframes sk-pulse {
+        50% {
+          opacity: 0.6;
+        }
+      }
+      @keyframes wish-pop {
+        0% {
+          transform: scale(0.6);
+          opacity: 0;
+        }
+        60% {
+          transform: scale(1.08);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .wishes-empty {
+        display: none;
+        margin: 50px auto 0;
+        max-width: 420px;
+        padding: 0 20px;
+      }
+      .wishes-empty.show {
+        display: block;
+      }
+      .wishes-empty .seal {
+        margin: 0 auto 18px;
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+        animation: seal-glow 2.6s ease-in-out infinite;
+      }
+      @keyframes seal-glow {
+        0%,
+        100% {
+          box-shadow:
+            0 0 0 3px rgba(183, 137, 63, 0.3),
+            0 0 0 0 rgba(217, 184, 119, 0.35),
+            0 6px 14px rgba(0, 0, 0, 0.3);
+        }
+        50% {
+          box-shadow:
+            0 0 0 3px rgba(183, 137, 63, 0.3),
+            0 0 0 16px rgba(217, 184, 119, 0),
+            0 6px 14px rgba(0, 0, 0, 0.3);
+        }
+      }
+      .wishes-empty h3 {
+        font-family: "Rakkas", serif;
+        font-size: 24px;
+        color: var(--ink);
+        font-weight: 400;
+      }
+      .wishes-empty p {
+        margin-top: 6px;
+        font-size: 14px;
+        line-height: 1.9;
+        color: var(--ink-soft);
+      }
+
+      .wishes-cta {
+        position: relative;
+        overflow: hidden;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 54px;
+        padding: 14px 40px;
+        border-radius: 999px;
+        background: linear-gradient(
+          135deg,
+          var(--gold-light) 0%,
+          var(--gold) 55%,
+          var(--gold-deep) 100%
+        );
+        color: #fff;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        box-shadow:
+          0 12px 26px rgba(156, 115, 51, 0.3),
+          0 0 0 4px rgba(217, 184, 119, 0.22);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .wishes-cta::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -60%;
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(
+          100deg,
+          transparent,
+          rgba(255, 255, 255, 0.45),
+          transparent
+        );
+        transform: skewX(-20deg);
+        animation: btn-shine 3.2s ease-in-out infinite;
+      }
+      .wishes-cta svg {
+        width: 18px;
+        height: 18px;
+      }
+      .wishes-cta:hover {
+        transform: translateY(-3px);
+        box-shadow:
+          0 18px 34px rgba(156, 115, 51, 0.38),
+          0 0 0 6px rgba(217, 184, 119, 0.3);
+      }
+
+      .wish-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: rgba(20, 14, 10, 0.7);
+        backdrop-filter: blur(4px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+      .wish-modal.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .wish-letter {
+        position: relative;
+        width: 100%;
+        max-width: 460px;
+        text-align: center;
+        padding: 52px 32px 26px;
+        border-radius: 22px;
+        background: linear-gradient(160deg, #fdf9f1, #efe3cc);
+        color: var(--ink);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        transform: translateY(20px) scale(0.95);
+        transition: transform 0.35s ease;
+      }
+      .wish-letter::after {
+        content: "";
+        position: absolute;
+        inset: 9px;
+        border-radius: 15px;
+        pointer-events: none;
+        border: 1px dashed rgba(183, 137, 63, 0.35);
+      }
+      .wish-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .wish-nav button {
+        position: relative;
+        z-index: 1;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 1px solid rgba(183, 137, 63, 0.45);
+        background: transparent;
+        color: var(--gold);
+        font-size: 18px;
+        line-height: 1;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+      }
+      .wish-nav button:hover {
+        background: var(--gold);
+        color: #fff;
+      }
+      .wish-nav button:disabled {
+        opacity: 0.3;
+        cursor: default;
+        background: transparent;
+        color: var(--gold);
+      }
+      .wish-modal.open .wish-letter {
+        transform: none;
+      }
+      .wish-letter .seal {
+        position: absolute;
+        top: -24px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 52px;
+        height: 52px;
+        font-size: 24px;
+      }
+      .wish-letter .wish-text {
+        font-family: "Amiri", serif;
+        font-size: 18px;
+        line-height: 2;
+        white-space: pre-line;
+        word-break: break-word;
+      }
+      .wish-letter .wish-sign {
+        margin-top: 18px;
+        font-family: "Rakkas", serif;
+        font-size: 20px;
+        color: var(--gold);
+      }
+      .wish-letter .wish-date {
+        margin-top: 4px;
+        font-size: 12px;
+        color: var(--ink-soft);
+        opacity: 0.7;
+      }
+      .wish-close {
+        position: absolute;
+        top: 14px;
+        left: 18px;
+        z-index: 1;
+        border: none;
+        background: none;
+        font-size: 26px;
+        color: var(--ink-soft);
+        cursor: pointer;
+      }
+      @media (max-width: 480px) {
+        .wishes-section {
+          padding: 72px 0;
+        }
+        .wish-spotlight {
+          padding: 42px 20px 24px;
+        }
+        .wish-card {
+          width: 240px;
+          padding: 32px 18px 14px;
+        }
+        .wishes-wall.static .wish-card {
+          width: min(300px, 100%);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .wish-track {
+          animation: none;
+        }
+        .wish-row {
+          overflow-x: auto;
+        }
+      }
+
+      footer {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        background: linear-gradient(180deg, var(--cream) 0%, #ece4d4 100%);
+        color: var(--ink);
+        text-align: center;
+        padding: 96px 20px 48px;
+        border-top: 1px solid rgba(183, 137, 63, 0.25);
+      }
+      /* sculpted white flowers framing two opposite corners */
+      footer .foot-flora {
+        position: absolute;
+        z-index: -1;
+        width: min(440px, 62vw);
+        aspect-ratio: 669 / 478;
+        background: url("flower-card.jpg") left top / cover no-repeat;
+        pointer-events: none;
+        -webkit-mask: radial-gradient(
+          ellipse 95% 95% at 0% 0%,
+          #000 35%,
+          transparent 72%
+        );
+        mask: radial-gradient(ellipse 95% 95% at 0% 0%, #000 35%, transparent 72%);
+      }
+      footer .foot-flora.top {
+        top: 0;
+        left: 0;
+      }
+      footer .foot-flora.bottom {
+        bottom: 0;
+        right: 0;
+        transform: rotate(180deg);
+      }
+      footer .foot-inner {
+        position: relative;
+        max-width: 440px;
+        margin: 0 auto;
+      }
+      footer .foot-names {
+        font-family: "Rakkas", serif;
+        font-weight: 700;
+        font-size: clamp(30px, 6vw, 40px);
+        line-height: 1.3;
+        color: var(--ink);
+        text-shadow: 0 0 24px var(--cream), 0 0 12px var(--cream);
+      }
+      footer .foot-names .amp {
+        display: inline-block;
+        font-family: Georgia, "Times New Roman", serif;
+        font-style: normal;
+        font-weight: 700;
+        color: var(--gold-deep);
+        margin: 0 14px;
+        font-size: 0.85em;
+        line-height: 1;
+        vertical-align: middle;
+        text-shadow: none;
+      }
+      footer .foot-date {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 14px;
+        padding: 7px 18px;
+        border: 1px solid rgba(183, 137, 63, 0.4);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.45);
+        font-family: "El Messiri", sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        color: var(--gold);
+      }
+      footer .foot-date .dot {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--gold);
+        opacity: 0.7;
+      }
+      footer .foot-note {
+        margin-top: 24px;
+        font-family: "El Messiri", sans-serif;
+        font-size: 12.5px;
+        color: var(--ink-soft);
+      }
+      footer .foot-note::before,
+      footer .foot-note::after {
+        content: "❦";
+        display: inline-block;
+        margin: 0 8px;
+        color: rgba(183, 137, 63, 0.7);
+        font-size: 13px;
+      }
+      footer .foot-note::after {
+        transform: scaleX(-1);
+      }
+      @media (max-width: 420px) {
+        footer {
+          padding: 84px 16px 64px;
+        }
+        footer .foot-date {
+          font-size: 13px;
+          padding: 6px 14px;
+        }
+        footer .foot-note::before,
+        footer .foot-note::after {
+          display: none;
+        }
+      }
+
+      /* ---------- MUSIC TOGGLE ---------- */
+      .music-toggle {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 90;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        padding: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(217, 184, 119, 0.6);
+        background: linear-gradient(
+          135deg,
+          var(--gold-light) 0%,
+          var(--gold) 60%,
+          var(--gold-deep) 100%
+        );
+        color: #fff;
+        box-shadow:
+          0 10px 24px rgba(0, 0, 0, 0.28),
+          0 0 0 4px rgba(217, 184, 119, 0.2);
+        transition: transform 0.3s ease;
+      }
+      .music-toggle:hover {
+        transform: scale(1.08);
+      }
+      .music-toggle svg {
+        width: 22px;
+        height: 22px;
+      }
+      .music-toggle .ic-off {
+        display: none;
+      }
+      .music-toggle.muted .ic-on {
+        display: none;
+      }
+      .music-toggle.muted .ic-off {
+        display: block;
+      }
+      .music-toggle.playing svg {
+        animation: music-spin 6s linear infinite;
+      }
+      .music-toggle.playing::after {
+        content: "";
+        position: absolute;
+        inset: -4px;
+        border-radius: 50%;
+        border: 1px solid var(--gold-light);
+        animation: music-ring 2s ease-out infinite;
+      }
+      @keyframes music-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes music-ring {
+        0% {
+          opacity: 0.8;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1.5);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .music-toggle.playing svg,
+        .music-toggle.playing::after {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="hero-top">
+        <div class="bismillah">بسم الله الرحمن الرحيم</div>
+        <div class="hero-verse">
+          "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+          لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ
+          إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ"
+          <div class="hero-verse-source">سورة الروم - الآية 21</div>
+        </div>
+      </div>
+      <div class="hero-content reveal in">
+        <span class="kicker"
+          >تتشرف عائلة الشمري وعائلة العتيبي<br />بدعوتكم لحضور حفل زفاف</span
+        >
+        <h1>فيصل<span class="amp">&</span>لمى</h1>
+        <div class="date-line">
+          بإذن الله تعالى &nbsp;•&nbsp; 29 أكتوبر 2026 - الخميس
+        </div>
+        <div class="scroll-cue"></div>
+      </div>
+    </section>
+
+    <!-- ===================== COUNTDOWN ===================== -->
+    <section class="countdown-section photo-bg reveal">
+      <h2 class="section-title">يفصلنا عن الفرحة</h2>
+      <div class="section-sub">عدّاد لحظات الانتظار حتى يوم زفافنا</div>
+      <div class="countdown">
+        <div class="box">
+          <div class="num" id="cd-days">00</div>
+          <div class="label">يوم</div>
+        </div>
+        <div class="box">
+          <div class="num" id="cd-hours">00</div>
+          <div class="label">ساعة</div>
+        </div>
+        <div class="box">
+          <div class="num" id="cd-min">00</div>
+          <div class="label">دقيقة</div>
+        </div>
+        <div class="box">
+          <div class="num" id="cd-sec">00</div>
+          <div class="label">ثانية</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DETAILS ===================== -->
+    <section class="details-section reveal">
+      <h2 class="section-title">تفاصيل الحفل</h2>
+      <div class="section-sub">موعدنا ومكان اللقاء</div>
+      <div class="cards">
+        <div class="card">
+          <div class="calendar-frame">
+            <img class="card-img" src="تنزيل (18).jpg" alt="" />
+            <svg
+              class="date-mark"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z"
+              />
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>التاريخ والوقت</h3>
+            <p>29 أكتوبر 2026 - الخميس<br />الساعة الثامنة مساءً</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="(16).jpg" alt="" />
+          <div class="card-body">
+            <h3>المكان</h3>
+            <p>قاعة الماسة للاحتفالات<br />الرياض، المملكة العربية السعودية</p>
+            <a
+              class="btn"
+              href="https://www.google.com/maps/search/?api=1&query=24.8157617,46.873284"
+              target="_blank"
+              rel="noopener"
+            >
+              فتح الموقع
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linejoin="round"
+                />
+                <circle
+                  cx="12"
+                  cy="9.5"
+                  r="2.4"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROGRAM ===================== -->
+    <section class="program-section reveal">
+      <h2 class="section-title">فقرات الحفل</h2>
+      <div class="section-sub">من الاستقبال حتى الختام</div>
+      <div class="timeline reveal">
+        <div class="tl-item">
+          <span class="tl-icon"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"
+              /></svg
+          ></span>
+          <div class="tl-body">
+            <div class="tl-time">8:00 مساءً</div>
+            <div class="tl-label">استقبال الضيوف</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-icon"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="8.5" cy="14.5" r="5.5" />
+              <circle cx="15.5" cy="14.5" r="5.5" />
+              <path d="M6.5 5.5 8.5 3l2 2.5M13.5 5.5l2-2.5 2 2.5" /></svg
+          ></span>
+          <div class="tl-body">
+            <div class="tl-time">9:00 مساءً</div>
+            <div class="tl-label">حفل الزفة والعقد</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-icon"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M9 18V5l12-2v13" />
+              <circle cx="6" cy="18" r="3" />
+              <circle cx="18" cy="16" r="3" /></svg
+          ></span>
+          <div class="tl-body">
+            <div class="tl-time">9:30 مساءً</div>
+            <div class="tl-label">الرقصة الأولى للعروسين</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-icon"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M4 21V13a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8M3 21h18M4 16c1.5 1 3 1 4 0s2.5-1 4 0 2.5 1 4 0 2.5-1 4 0M12 11V7M12 4.5c.8-.8.8-1.7 0-2.5-.8.8-.8 1.7 0 2.5z"
+              /></svg
+          ></span>
+          <div class="tl-body">
+            <div class="tl-time">10:00 مساءً</div>
+            <div class="tl-label">تقطيع كيكة الزفاف</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-icon"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.420 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z"
+              /></svg
+          ></span>
+          <div class="tl-body">
+            <div class="tl-time">10:30 مساءً</div>
+            <div class="tl-label">حفل العشاء</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-icon"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"
+              />
+              <circle cx="12" cy="13.5" r="3.5" /></svg
+          ></span>
+          <div class="tl-body">
+            <div class="tl-time">11:30 مساءً</div>
+            <div class="tl-label">الصور التذكارية</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-icon"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" /></svg
+          ></span>
+          <div class="tl-body">
+            <div class="tl-time">12:00 منتصف الليل</div>
+            <div class="tl-label">ختام الحفل ووداع العروسين</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MAP ===================== -->
+    <section class="map-section photo-bg reveal">
+      <h2 class="section-title">موقع الصالة</h2>
+      <div class="section-sub">قاعة الماسة للاحتفالات، الرياض</div>
+      <div class="map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?ll=24.8157617,46.873284&z=16&hl=ar&output=embed"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          title="خريطة موقع قاعة الماسة للاحتفالات"
+        >
+        </iframe>
+        <span class="map-pin-pulse" aria-hidden="true"></span>
+        <span class="map-pin" aria-hidden="true">
+          <svg viewBox="0 0 46 58">
+            <path
+              d="M23 57C23 57 44 36.5 44 22A21 21 0 0 0 2 22C2 36.5 23 57 23 57Z"
+              fill="#b7893f"
+              stroke="#fff"
+              stroke-width="2"
+            />
+            <path
+              d="M23 31.5s-8.5-5.2-8.5-10.6a4.6 4.6 0 0 1 8.5-2.5 4.6 4.6 0 0 1 8.5 2.5c0 5.4-8.5 10.6-8.5 10.6Z"
+              fill="#fff"
+            />
+          </svg>
+        </span>
+        <a
+          class="map-open"
+          href="https://www.google.com/maps/search/?api=1&query=24.8157617,46.873284"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          خرائط Google
+        </a>
+        <a
+          class="map-label"
+          href="https://www.google.com/maps/search/?api=1&query=24.8157617,46.873284"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linejoin="round"
+            />
+            <circle
+              cx="12"
+              cy="9.5"
+              r="2.4"
+              stroke="currentColor"
+              stroke-width="1.6"
+            />
+          </svg>
+          قاعة الماسة للاحتفالات، الرياض
+        </a>
+      </div>
+      <p class="map-note">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect
+            x="3"
+            y="3"
+            width="18"
+            height="18"
+            rx="4"
+            stroke="currentColor"
+            stroke-width="1.6"
+          />
+          <path
+            d="M9.5 17V7h3.5a3 3 0 0 1 0 6H9.5"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        يتوفر مكان مخصص لاصطفاف السيارات
+      </p>
+    </section>
+
+    <!-- ===================== CLOSING / RSVP ===================== -->
+    <section class="closing reveal">
+      <div class="closing-card">
+        <span class="corner tl"></span><span class="corner tr"></span>
+        <span class="corner bl"></span><span class="corner br"></span>
+        <span class="kicker">بحضوركم تكتمل فرحتنا</span>
+        <h2>بانتظاركم لتكونوا شهودًا على هذا اليوم</h2>
+        <p>
+          يسعدنا تأكيد حضوركم قبل الموعد بوقتٍ كافٍ، حتى نُحضّر لكم استقبالًا
+          يليق بكم
+        </p>
+        <a class="rsvp-btn" href="#rsvp-form">
+          تأكيد الحضور
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M18 8L12 14L6 8"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== RSVP FORM ===================== -->
+    <section class="rsvp-section photo-bg reveal" id="rsvp-form">
+      <h2 class="section-title">تأكيد الحضور</h2>
+      <div class="section-sub">
+        يرجى تعبئة البيانات، وسيتم إرسالها إلينا مباشرة عبر واتساب
+      </div>
+
+      <form class="rsvp-form" id="rsvpForm">
+        <div class="form-group">
+          <label for="rsvp-name">الاسم</label>
+          <input
+            type="text"
+            id="rsvp-name"
+            name="name"
+            required
+            placeholder="الاسم"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="rsvp-phone">رقم الجوال (اختياري)</label>
+          <input
+            type="tel"
+            id="rsvp-phone"
+            name="phone"
+            placeholder="05xxxxxxxx"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>هل ستحضر الحفل؟</label>
+          <div class="attend-options">
+            <label
+              ><input type="radio" name="attending" value="yes" checked /> سأحضر
+              بإذن الله</label
+            >
+            <label
+              ><input type="radio" name="attending" value="no" /> أعتذر عن
+              الحضور</label
+            >
+          </div>
+        </div>
+
+        <div class="form-group" id="guests-group">
+          <label for="rsvp-guests">عدد الحضور (بما فيهم أنت)</label>
+          <div class="stepper">
+            <input
+              type="number"
+              id="rsvp-guests"
+              name="guests"
+              min="1"
+              max="20"
+              value="1"
+            />
+            <div class="stepper-arrows">
+              <button
+                type="button"
+                class="stepper-btn up"
+                data-step="1"
+                aria-label="زيادة العدد"
+              >
+                <svg viewBox="0 0 10 10">
+                  <path
+                    d="M2 6.5 5 3.5 8 6.5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <button
+                type="button"
+                class="stepper-btn down"
+                data-step="-1"
+                aria-label="إنقاص العدد"
+              >
+                <svg viewBox="0 0 10 10">
+                  <path
+                    d="M2 3.5 5 6.5 8 3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="rsvp-wish">كلمة تهنئة للعروسين (اختياري)</label>
+          <textarea
+            id="rsvp-wish"
+            name="wish"
+            maxlength="300"
+            placeholder="اكتب مباركتك… وستظهر في جدار المباركات ♡"
+          ></textarea>
+          <div class="wish-count"><span id="wishCount">0</span>/300</div>
+        </div>
+
+        <button type="submit" class="form-submit">
+          <svg
+            class="icon"
+            viewBox="0 0 32 32"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.702 4.607 1.916 6.475L4 29l7.717-1.878A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3Zm.006 21.7c-1.949 0-3.76-.57-5.29-1.553l-.379-.24-4.578 1.115 1.157-4.464-.248-.393A9.66 9.66 0 0 1 5.31 15c0-5.348 4.345-9.693 9.694-9.693 5.348 0 9.694 4.345 9.694 9.693 0 5.349-4.346 9.7-9.691 9.7Zm5.32-7.267c-.291-.146-1.72-.849-1.987-.946-.267-.097-.461-.146-.655.146-.194.291-.752.946-.922 1.14-.17.194-.34.219-.63.073-.291-.146-1.228-.452-2.34-1.442-.865-.771-1.45-1.723-1.62-2.014-.17-.291-.018-.448.128-.593.132-.131.291-.34.437-.51.146-.17.194-.291.291-.485.097-.194.049-.364-.024-.51-.073-.146-.655-1.577-.897-2.16-.236-.567-.477-.49-.655-.5-.17-.008-.364-.01-.558-.01-.194 0-.51.073-.777.364-.267.291-1.018.995-1.018 2.426 0 1.43 1.042 2.812 1.188 3.006.146.194 2.052 3.132 4.973 4.393.695.3 1.237.48 1.66.614.697.222 1.332.19 1.834.115.559-.084 1.72-.703 1.963-1.382.243-.679.243-1.261.17-1.382-.073-.121-.267-.194-.558-.34Z"
+            />
+          </svg>
+          إرسال التأكيد عبر واتساب
+        </button>
+        <div class="rsvp-thanks" id="rsvpThanks">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle
+              cx="12"
+              cy="12"
+              r="9.5"
+              stroke="currentColor"
+              stroke-width="1.6"
+            />
+            <path
+              d="M8 12.5l2.5 2.5L16 9.5"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          شكرًا لك! تم فتح واتساب لإتمام إرسال التأكيد.
+        </div>
+      </form>
+    </section>
+
+    <!-- ===================== WISHES WALL ===================== -->
+    <section class="wishes-section reveal" id="wishes">
+      <span class="sparkle" style="top: 12%; right: 8%"></span>
+      <span
+        class="sparkle"
+        style="top: 30%; left: 6%; animation-delay: 1.2s"
+      ></span>
+      <span
+        class="sparkle"
+        style="bottom: 18%; right: 14%; animation-delay: 2.1s"
+      ></span>
+      <span
+        class="sparkle"
+        style="bottom: 10%; left: 20%; animation-delay: 0.6s"
+      ></span>
+
+      <span class="kicker">رسائل من القلب</span>
+      <h2 class="section-title">جدار المباركات</h2>
+      <div class="section-sub">كلمات أحبّتنا التي زيّنت فرحتنا</div>
+      <div class="wishes-ornament" aria-hidden="true">
+        <span></span>
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z"
+          />
+        </svg>
+        <span></span>
+      </div>
+
+      <!-- مباركة مميزة تتبدل تلقائيًا -->
+      <div class="wish-spotlight" id="wishSpotlight">
+        <span class="spot-badge">أحدث المباركات</span>
+        <div class="spot-body" id="spotBody">
+          <p class="spot-text" id="spotText"></p>
+          <div class="spot-name" id="spotName"></div>
+        </div>
+        <div class="spot-dots" id="spotDots"></div>
+      </div>
+
+      <div class="wishes-wall" id="wishesWall"></div>
+
+      <div class="wishes-empty" id="wishesEmpty">
+        <div class="seal"><span class="heart"></span></div>
+        <h3>كن أول من يبارك</h3>
+        <p>اكتب كلمة جميلة للعروسين فيصل ولمى، وستُزيّن هذا الجدار</p>
+      </div>
+
+      <div>
+        <a class="wishes-cta" href="#rsvp-form">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M4 20h4L18.5 9.5a2.83 2.83 0 0 0-4-4L4 16v4Z"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linejoin="round"
+            />
+            <path d="M13.5 6.5l4 4" stroke="currentColor" stroke-width="1.7" />
+          </svg>
+          اكتب مباركتك
+        </a>
+      </div>
+    </section>
+
+    <!-- نافذة قراءة المباركة كاملة -->
+    <div class="wish-modal" id="wishModal" aria-hidden="true">
+      <div class="wish-letter" role="dialog" aria-modal="true">
+        <button type="button" class="wish-close" aria-label="إغلاق">×</button>
+        <div class="seal" id="wmSeal"></div>
+        <p class="wish-text" id="wmText"></p>
+        <div class="wish-sign" id="wmName"></div>
+        <div class="wish-date" id="wmDate"></div>
+        <div class="wish-nav">
+          <button type="button" id="wmPrev" aria-label="المباركة السابقة">
+            →
+          </button>
+          <button type="button" id="wmNext" aria-label="المباركة التالية">
+            ←
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="foot-flora top" aria-hidden="true"></div>
+      <div class="foot-flora bottom" aria-hidden="true"></div>
+      <div class="foot-inner">
+        <div class="foot-names">فيصل<span class="amp">&</span>لمى</div>
+        <div class="foot-date">
+          بإذن الله تعالى<span class="dot" aria-hidden="true"></span>29 أكتوبر 2026
+        </div>
+        <div class="foot-note">صُنعت هذه الدعوة بمحبة لهذا اليوم الخاص</div>
+      </div>
+    </footer>
+
+    <!-- ===================== MUSIC ===================== -->
+    <audio id="bgMusic" src="music.weba" loop preload="auto"></audio>
+    <button
+      type="button"
+      class="music-toggle muted"
+      id="musicToggle"
+      aria-label="تشغيل الموسيقى"
+      aria-pressed="false"
+    >
+      <svg
+        class="ic-on"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M9 18V5l12-2v13" />
+        <circle cx="6" cy="18" r="3" />
+        <circle cx="18" cy="16" r="3" />
+      </svg>
+      <svg
+        class="ic-off"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M9 18V5l12-2v13" />
+        <circle cx="6" cy="18" r="3" />
+        <circle cx="18" cy="16" r="3" />
+        <path d="M3 3l18 18" />
+      </svg>
+    </button>
+
+    <script>
+      // ===== الموسيقى: تبدأ مع أول تفاعل للزائر (المتصفحات تمنع التشغيل التلقائي) =====
+      const bgMusic = document.getElementById("bgMusic");
+      const musicToggle = document.getElementById("musicToggle");
+      bgMusic.volume = 0.5;
+      let musicUserPaused = false;
+
+      function setMusicUI(playing) {
+        musicToggle.classList.toggle("playing", playing);
+        musicToggle.classList.toggle("muted", !playing);
+        musicToggle.setAttribute("aria-pressed", playing);
+        musicToggle.setAttribute(
+          "aria-label",
+          playing ? "إيقاف الموسيقى" : "تشغيل الموسيقى",
+        );
+      }
+      function playMusic() {
+        return bgMusic
+          .play()
+          .then(() => setMusicUI(true))
+          .catch(() => setMusicUI(false));
+      }
+      musicToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (bgMusic.paused) {
+          musicUserPaused = false;
+          playMusic();
+        } else {
+          musicUserPaused = true;
+          bgMusic.pause();
+          setMusicUI(false);
+        }
+      });
+      const firstInteraction = ["pointerdown", "keydown", "touchstart"];
+      function startOnInteraction(e) {
+        if (e.target.closest && e.target.closest("#musicToggle")) return; // زر الموسيقى يتولى الأمر بنفسه
+        firstInteraction.forEach((ev) =>
+          document.removeEventListener(ev, startOnInteraction),
+        );
+        if (!musicUserPaused && bgMusic.paused) playMusic();
+      }
+      firstInteraction.forEach((ev) =>
+        document.addEventListener(ev, startOnInteraction, { passive: true }),
+      );
+      playMusic(); // محاولة تشغيل تلقائي (تنجح في بعض المتصفحات)
+      // إيقاف الموسيقى عند مغادرة الصفحة واستئنافها عند العودة
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          if (!bgMusic.paused) {
+            bgMusic.pause();
+            bgMusic.dataset.resume = "1";
+          }
+        } else if (bgMusic.dataset.resume) {
+          delete bgMusic.dataset.resume;
+          playMusic();
+        }
+      });
+
+      // ===== عدّاد الزفاف: عدّلي التاريخ التالي ليطابق تاريخ الحفل الفعلي =====
+      const WEDDING_DATE = new Date("2026-10-29T20:00:00");
+
+      function updateCountdown() {
+        const now = new Date();
+        let diff = WEDDING_DATE - now;
+        if (diff < 0) diff = 0;
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const m = Math.floor((diff / (1000 * 60)) % 60);
+        const s = Math.floor((diff / 1000) % 60);
+        document.getElementById("cd-days").textContent = String(d).padStart(
+          2,
+          "0",
+        );
+        document.getElementById("cd-hours").textContent = String(h).padStart(
+          2,
+          "0",
+        );
+        document.getElementById("cd-min").textContent = String(m).padStart(
+          2,
+          "0",
+        );
+        document.getElementById("cd-sec").textContent = String(s).padStart(
+          2,
+          "0",
+        );
+      }
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // ===== فورم تأكيد الحضور: إرسال البيانات عبر واتساب =====
+      const RSVP_PHONE = "970567453433"; // رقم واتساب استقبال التأكيدات (صيغة دولية بدون + أو أصفار)
+      const rsvpForm = document.getElementById("rsvpForm");
+      const guestsGroup = document.getElementById("guests-group");
+      const rsvpThanks = document.getElementById("rsvpThanks");
+
+      function toggleGuestsField() {
+        const attending = rsvpForm.querySelector(
+          'input[name="attending"]:checked',
+        ).value;
+        guestsGroup.style.display = attending === "yes" ? "" : "none";
+      }
+      rsvpForm.querySelectorAll('input[name="attending"]').forEach((el) => {
+        el.addEventListener("change", toggleGuestsField);
+      });
+      toggleGuestsField();
+
+      // أزرار زيادة/إنقاص عدد الحضور
+      const guestsInput = document.getElementById("rsvp-guests");
+      const stepBtns = guestsGroup.querySelectorAll(".stepper-btn");
+      function syncStepper() {
+        const v = parseInt(guestsInput.value, 10) || 1;
+        stepBtns.forEach((b) => {
+          const s = +b.dataset.step;
+          b.disabled =
+            (s < 0 && v <= +guestsInput.min) ||
+            (s > 0 && v >= +guestsInput.max);
+        });
+      }
+      stepBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const min = +guestsInput.min,
+            max = +guestsInput.max;
+          const v =
+            (parseInt(guestsInput.value, 10) || min) + +btn.dataset.step;
+          guestsInput.value = Math.min(max, Math.max(min, v));
+          syncStepper();
+        });
+      });
+      guestsInput.addEventListener("input", syncStepper);
+      syncStepper();
+
+      // ===== جدار المباركات =====
+      // لعرض المباركات لجميع الزوار: ضعي هنا رابط Google Apps Script (راجعي ملف wishes-google-apps-script.gs)
+      // إذا تُرك فارغًا، تُحفظ المباركة في متصفح المُرسل فقط.
+      const WISHES_API_URL =
+        "https://script.google.com/macros/s/AKfycbzXIlQt1VStJvD-sBNxth2Iu1Iw9Kj9xPE_ISqo7wfu6d8gR0_6MhBH-CEgvh9e_RBp/exec";
+      const WISHES_LOCAL_KEY = "wedding-wishes";
+
+      const wishInput = document.getElementById("rsvp-wish");
+      const wishCount = document.getElementById("wishCount");
+      wishInput.addEventListener("input", () => {
+        wishCount.textContent = wishInput.value.length;
+      });
+
+      const wishesWall = document.getElementById("wishesWall");
+      const wishesEmpty = document.getElementById("wishesEmpty");
+      let wishes = [];
+
+      function readLocalWishes() {
+        try {
+          return JSON.parse(localStorage.getItem(WISHES_LOCAL_KEY)) || [];
+        } catch (_) {
+          return [];
+        }
+      }
+      function writeLocalWishes(list) {
+        try {
+          localStorage.setItem(WISHES_LOCAL_KEY, JSON.stringify(list));
+        } catch (_) {}
+      }
+
+      // نسخة محفوظة من مباركات الشيت لعرضها فورًا في الزيارات التالية بدل انتظار Google
+      const WISHES_CACHE_KEY = "wedding-wishes-cache";
+      function readCache() {
+        try {
+          return JSON.parse(localStorage.getItem(WISHES_CACHE_KEY));
+        } catch (_) {
+          return null;
+        }
+      }
+      function writeCache(list) {
+        try {
+          localStorage.setItem(WISHES_CACHE_KEY, JSON.stringify(list));
+        } catch (_) {}
+      }
+
+      // دمج المحلي مع البعيد مع تجنب التكرار
+      function mergeWishes(remote) {
+        const seen = new Set(remote.map((w) => w.name + "|" + w.text));
+        const local = readLocalWishes().filter(
+          (w) => !seen.has(w.name + "|" + w.text),
+        );
+        return [...remote, ...local].sort(
+          (a, b) => (b.date || 0) - (a.date || 0),
+        );
+      }
+
+      function showWishesLoading() {
+        wishesWall.innerHTML = "";
+        wishesWall.classList.add("static");
+        wishesEmpty.classList.remove("show");
+        for (let i = 0; i < 3; i++) {
+          const sk = document.createElement("div");
+          sk.className = "wish-card skeleton";
+          sk.style.setProperty("--tilt", (i % 2 ? 1.5 : -1.5) + "deg");
+          sk.innerHTML =
+            '<div class="seal"></div><span class="sk-line"></span><span class="sk-line short"></span>';
+          wishesWall.appendChild(sk);
+        }
+      }
+
+      async function loadWishes() {
+        const cached = readCache();
+        if (cached || !WISHES_API_URL) {
+          wishes = mergeWishes(cached || []);
+          renderWishes();
+        } else {
+          showWishesLoading();
+        }
+        if (!WISHES_API_URL) return;
+
+        try {
+          const res = await fetch(WISHES_API_URL);
+          const remote = await res.json();
+          writeCache(remote);
+          const fresh = mergeWishes(remote);
+          // نعيد الرسم فقط إذا تغيّرت المباركات، حتى لا تقفز الحركة
+          if (!cached || JSON.stringify(fresh) !== JSON.stringify(wishes)) {
+            wishes = fresh;
+            renderWishes();
+          }
+        } catch (_) {
+          if (!cached) {
+            wishes = mergeWishes([]);
+            renderWishes();
+          }
+        }
+      }
+
+      function saveWish(w) {
+        w.date = Date.now();
+        writeLocalWishes([w, ...readLocalWishes()]);
+        wishes.unshift(w);
+        renderWishes(w);
+        if (WISHES_API_URL) {
+          fetch(WISHES_API_URL, {
+            method: "POST",
+            mode: "no-cors",
+            body: JSON.stringify(w),
+          }).catch(() => {});
+        }
+      }
+
+      // الختم: أول حرف من الاسم، أو قلب ذهبي إن لم يوجد اسم
+      function fillSeal(el, name) {
+        const ch = (name || "").trim().charAt(0);
+        if (ch) {
+          el.textContent = ch;
+        } else {
+          el.innerHTML = '<span class="heart"></span>';
+        }
+      }
+
+      function makeCard(w, i, isNew) {
+        const card = document.createElement("div");
+        card.className = "wish-card" + (isNew ? " is-new" : "");
+        card.style.setProperty("--tilt", (i % 2 ? 1.5 : -1.5) + "deg");
+        const seal = document.createElement("div");
+        seal.className = "seal";
+        fillSeal(seal, w.name);
+        const text = document.createElement("p");
+        text.className = "wish-text";
+        text.textContent = w.text;
+        const foot = document.createElement("div");
+        foot.className = "wish-foot";
+        const sign = document.createElement("div");
+        sign.className = "wish-sign";
+        sign.textContent = "— " + w.name;
+        const extra = document.createElement("span");
+        if (w.text.length > 110) {
+          extra.className = "wish-more";
+          extra.textContent = "اقرأ المزيد";
+        } else {
+          extra.className = "wish-heart heart";
+        }
+        foot.append(sign, extra);
+        card.append(seal, text, foot);
+        card.addEventListener("click", () => openWish(wishes.indexOf(w)));
+        return card;
+      }
+
+      // ===== المباركة المميزة: تعرض أحدث المباركات وتتبدل كل بضع ثوانٍ =====
+      const spotlight = document.getElementById("wishSpotlight");
+      const spotBody = document.getElementById("spotBody");
+      const spotDots = document.getElementById("spotDots");
+      const SPOT_MIN = 3,
+        SPOT_MAX = 6,
+        SPOT_DELAY = 6000;
+      let spotItems = [],
+        spotIndex = 0,
+        spotTimer = null;
+
+      function showSpot(i, animate = true) {
+        spotIndex = (i + spotItems.length) % spotItems.length;
+        const w = spotItems[spotIndex];
+        const apply = () => {
+          document.getElementById("spotText").textContent = w.text;
+          document.getElementById("spotName").textContent = w.name;
+          spotDots
+            .querySelectorAll("button")
+            .forEach((b, j) => b.classList.toggle("active", j === spotIndex));
+          spotBody.classList.remove("fading");
+        };
+        if (!animate) return apply();
+        spotBody.classList.add("fading");
+        setTimeout(apply, 450);
+      }
+      function startSpot() {
+        clearInterval(spotTimer);
+        spotTimer = setInterval(() => showSpot(spotIndex + 1), SPOT_DELAY);
+      }
+      function renderSpotlight() {
+        clearInterval(spotTimer);
+        spotItems = wishes.slice(0, SPOT_MAX);
+        const on = wishes.length >= SPOT_MIN;
+        spotlight.classList.toggle("show", on);
+        if (!on) return;
+        spotDots.innerHTML = "";
+        spotItems.forEach((_, i) => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.setAttribute("aria-label", "المباركة " + (i + 1));
+          b.addEventListener("click", () => {
+            showSpot(i);
+            startSpot();
+          });
+          spotDots.appendChild(b);
+        });
+        showSpot(0, false);
+        startSpot();
+      }
+      spotlight.addEventListener("mouseenter", () => clearInterval(spotTimer));
+      spotlight.addEventListener("mouseleave", () => {
+        if (spotItems.length) startSpot();
+      });
+      spotBody.addEventListener("click", () =>
+        openWish(wishes.indexOf(spotItems[spotIndex])),
+      );
+      spotBody.style.cursor = "pointer";
+
+      function renderWishes(newWish) {
+        wishesWall.innerHTML = "";
+        wishesEmpty.classList.toggle("show", wishes.length === 0);
+        renderSpotlight();
+        if (!wishes.length) return;
+
+        // عدد قليل: بطاقات ثابتة. عدد أكبر: صفوف متحركة باتجاهين متعاكسين
+        if (wishes.length < 5) {
+          wishesWall.classList.add("static");
+          wishes.forEach((w, i) =>
+            wishesWall.appendChild(makeCard(w, i, w === newWish)),
+          );
+          return;
+        }
+        wishesWall.classList.remove("static");
+        const rowsCount = wishes.length >= 10 ? 2 : 1;
+        for (let r = 0; r < rowsCount; r++) {
+          const items = wishes.filter((_, i) => i % rowsCount === r);
+          const row = document.createElement("div");
+          row.className = "wish-row" + (r % 2 ? " reverse" : "");
+          const track = document.createElement("div");
+          track.className = "wish-track";
+          track.style.setProperty("--dur", items.length * 7 + "s");
+          // نكرر البطاقات مرتين لحركة لا نهائية سلسة
+          [...items, ...items].forEach((w, i) =>
+            track.appendChild(makeCard(w, i, false)),
+          );
+          row.appendChild(track);
+          wishesWall.appendChild(row);
+        }
+      }
+
+      const wishModal = document.getElementById("wishModal");
+      const wmPrev = document.getElementById("wmPrev");
+      const wmNext = document.getElementById("wmNext");
+      let openIndex = -1;
+      function openWish(i) {
+        const w = wishes[i];
+        if (!w) return;
+        openIndex = i;
+        wmPrev.disabled = i <= 0;
+        wmNext.disabled = i >= wishes.length - 1;
+        fillSeal(document.getElementById("wmSeal"), w.name);
+        document.getElementById("wmText").textContent = w.text;
+        document.getElementById("wmName").textContent = w.name;
+        document.getElementById("wmDate").textContent = w.date
+          ? new Date(w.date).toLocaleDateString("ar-SA-u-ca-gregory", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            })
+          : "";
+        wishModal.classList.add("open");
+        wishModal.setAttribute("aria-hidden", "false");
+      }
+      function closeWish() {
+        wishModal.classList.remove("open");
+        wishModal.setAttribute("aria-hidden", "true");
+      }
+      wishModal.addEventListener("click", (e) => {
+        if (e.target === wishModal || e.target.closest(".wish-close"))
+          closeWish();
+      });
+      wmPrev.addEventListener("click", () => openWish(openIndex - 1));
+      wmNext.addEventListener("click", () => openWish(openIndex + 1));
+      document.addEventListener("keydown", (e) => {
+        if (!wishModal.classList.contains("open")) return;
+        if (e.key === "Escape") closeWish();
+        // في الاتجاه العربي: السهم الأيسر = التالي، والأيمن = السابق
+        if (e.key === "ArrowLeft") openWish(openIndex + 1);
+        if (e.key === "ArrowRight") openWish(openIndex - 1);
+      });
+
+      loadWishes();
+
+      rsvpForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("rsvp-name").value.trim();
+        const phone = document.getElementById("rsvp-phone").value.trim();
+        const attending = rsvpForm.querySelector(
+          'input[name="attending"]:checked',
+        ).value;
+        const guests = document.getElementById("rsvp-guests").value;
+        const wish = wishInput.value.trim();
+
+        if (!name) return;
+
+        const lines = [
+          "تأكيد حضور حفل الزفاف",
+          `الاسم: ${name}`,
+          attending === "yes" ? "سيشرفني الحضور بإذن الله" : "أعتذر عن الحضور",
+        ];
+        if (attending === "yes") lines.push(`عدد الحضور: ${guests || 1}`);
+        if (phone) lines.push(`رقم الجوال: ${phone}`);
+        if (wish) {
+          lines.push(`التهنئة: ${wish}`);
+          saveWish({ name, text: wish });
+        }
+
+        const msg = encodeURIComponent(lines.join("\n"));
+        const waUrl = `https://wa.me/${RSVP_PHONE}?text=${msg}`;
+        // بعض متصفحات الجوال تمنع النوافذ المنبثقة، فنفتح الرابط في نفس الصفحة كبديل
+        const win = window.open(waUrl, "_blank");
+        if (!win) window.location.href = waUrl;
+
+        rsvpThanks.classList.add("show");
+      });
+
+      // ===== تأثير ظهور تدريجي عند التمرير =====
+      const revealEls = document.querySelectorAll(".reveal");
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+      revealEls.forEach((el) => io.observe(el));
+
+      // ===== تحريك بطاقات التفاصيل تلقائياً على الجوال =====
+      (() => {
+        const track = document.querySelector(".details-section .cards");
+        if (!track) return;
+        const cards = [...track.children];
+        const mq = window.matchMedia("(max-width: 700px)");
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+        let index = 0;
+        let paused = false;
+        let visible = false;
+        let resumeTimer;
+
+        const goTo = (i) => {
+          const t = track.getBoundingClientRect();
+          const c = cards[i].getBoundingClientRect();
+          const delta = c.left + c.width / 2 - (t.left + t.width / 2);
+          track.scrollBy({ left: delta, behavior: "smooth" });
+        };
+
+        // تحديد البطاقة الأقرب للمنتصف بعد السحب اليدوي
+        const nearest = () => {
+          const t = track.getBoundingClientRect();
+          const mid = t.left + t.width / 2;
+          let best = 0;
+          let bestDist = Infinity;
+          cards.forEach((c, i) => {
+            const r = c.getBoundingClientRect();
+            const d = Math.abs(r.left + r.width / 2 - mid);
+            if (d < bestDist) {
+              bestDist = d;
+              best = i;
+            }
+          });
+          return best;
+        };
+
+        const pause = () => {
+          paused = true;
+          clearTimeout(resumeTimer);
+        };
+        const resume = () => {
+          clearTimeout(resumeTimer);
+          resumeTimer = setTimeout(() => {
+            index = nearest();
+            paused = false;
+          }, 4000);
+        };
+        track.addEventListener("touchstart", pause, { passive: true });
+        track.addEventListener("touchend", resume, { passive: true });
+        track.addEventListener("pointerdown", pause);
+        track.addEventListener("pointerup", resume);
+
+        new IntersectionObserver(
+          ([e]) => (visible = e.isIntersecting),
+          { threshold: 0.4 },
+        ).observe(track);
+
+        setInterval(() => {
+          if (!mq.matches || reduce.matches || paused || !visible) return;
+          index = (index + 1) % cards.length;
+          goTo(index);
+        }, 3500);
+      })();
+    </script>
+  </body>
+</html>
