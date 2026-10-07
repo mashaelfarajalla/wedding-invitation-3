@@ -4,6 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>دعوة زفاف</title>
+    <!-- صورة الواجهة هي أكبر عنصر (LCP): نطلبها مبكرًا بدل انتظار قراءة CSS -->
+    <link
+      rel="preload"
+      as="image"
+      href="تنزيل (9).jpg"
+      media="(max-width: 819px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="hero-desktop.jpg"
+      media="(min-width: 820px)"
+      fetchpriority="high"
+    />
     <link
       rel="preload"
       href="fonts/el-messiri-arabic.woff2"
@@ -141,6 +156,28 @@
       }
       html {
         scroll-behavior: smooth;
+        scrollbar-width: thin;
+        scrollbar-color: var(--gold) var(--cream-deep);
+      }
+
+      /* شريط التمرير */
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--cream-deep);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, var(--gold-light), var(--gold), var(--gold-deep));
+        border: 2px solid var(--cream-deep);
+        border-radius: 999px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--gold-deep);
+      }
+      ::-webkit-scrollbar-corner {
+        background: var(--cream-deep);
       }
       body {
         background: var(--cream);
@@ -229,12 +266,10 @@
         position: absolute;
         inset: 0;
       }
+      /* طبقة ::after تغطي الواجهة بالكامل بصورة معتمة، فلا داعي لنسخة مموّهة
+         تحتها (فلتر blur بحجم الشاشة كان مكلفًا جدًا على الجوال) */
       .hero::before {
-        background-image: url("تنزيل (9).jpg");
-        background-size: cover;
-        background-position: center bottom;
-        filter: blur(35px) brightness(0.55);
-        transform: scale(1.15);
+        background: var(--cream-deep);
         z-index: 0;
       }
       .hero::after {
@@ -252,17 +287,13 @@
         z-index: 1;
       }
       @media (min-width: 820px) {
-        .hero::before {
-          background-image: url("hero-desktop.jpg");
-        }
         .hero::after {
           background-image:
-            linear-gradient(
-              180deg,
-              rgba(20, 14, 10, 0.55) 0%,
-              rgba(28, 20, 14, 0) 22%,
-              rgba(28, 20, 14, 0.12) 45%,
-              var(--overlay) 100%
+            radial-gradient(
+              ellipse 90% 70% at 50% 55%,
+              rgba(243, 237, 224, 0.72) 0%,
+              rgba(243, 237, 224, 0.35) 60%,
+              rgba(243, 237, 224, 0) 100%
             ),
             url("hero-desktop.jpg");
           background-size: cover;
@@ -359,8 +390,43 @@
           opacity: 1;
         }
       }
-      /* صورة الموبايل فاتحة (كريمي) فالنص الأبيض يضيع عليها:
+      /* صور الواجهة فاتحة (كريمي) فالنص الأبيض يضيع عليها:
          نستبدل الطبقة الداكنة بطبقة كريمية خفيفة ونقلب ألوان النص للداكن */
+      .hero-content {
+        color: var(--ink);
+      }
+      .hero-top .bismillah {
+        color: var(--gold-deep);
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+      }
+      .hero-verse {
+        color: var(--ink);
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+      }
+      .hero-verse-source {
+        color: var(--gold-deep);
+        font-weight: 600;
+        text-shadow: none;
+      }
+      .hero .kicker {
+        color: var(--gold-deep);
+        font-weight: 600;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+      }
+      .hero h1 {
+        color: var(--ink);
+        text-shadow: 0 2px 8px rgba(255, 255, 255, 0.7);
+      }
+      .hero .amp {
+        color: var(--gold);
+      }
+      .hero .date-line {
+        color: var(--ink-soft);
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+      }
+      .scroll-cue {
+        background: linear-gradient(var(--gold), transparent);
+      }
       @media (max-width: 819px) {
         .hero::after {
           background-image:
@@ -372,46 +438,21 @@
             ),
             url("تنزيل (9).jpg");
         }
-        .hero-content {
-          color: var(--ink);
-        }
         .hero-top .bismillah {
-          color: var(--gold-deep);
           font-size: 19px;
-          text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
         }
         .hero-verse {
-          color: var(--ink);
           font-size: 17px;
           line-height: 2.2;
-          text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
         }
         .hero-verse-source {
-          color: var(--gold-deep);
           font-size: 14px;
-          font-weight: 600;
-          text-shadow: none;
         }
         .hero .kicker {
-          color: var(--gold-deep);
-          font-weight: 600;
           font-size: 17px;
-          text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
-        }
-        .hero h1 {
-          color: var(--ink);
-          text-shadow: 0 2px 8px rgba(255, 255, 255, 0.7);
-        }
-        .hero .amp {
-          color: var(--gold);
         }
         .hero .date-line {
-          color: var(--ink-soft);
           font-size: 16px;
-          text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
-        }
-        .scroll-cue {
-          background: linear-gradient(var(--gold), transparent);
         }
       }
 
@@ -482,6 +523,7 @@
       }
       .card .card-img {
         width: 100%;
+        height: auto;
         display: block;
         aspect-ratio: 669/478;
         object-fit: cover;
@@ -1113,13 +1155,15 @@
         transform: skewX(-20deg);
         animation: btn-shine 3.2s ease-in-out infinite;
       }
+      /* نحرك transform بدل left حتى تعمل الحركة على كرت الشاشة دون إعادة رسم.
+         475% من عرض اللمعة (40%) = 190% من عرض الزر، أي من ‎-60% إلى 130% */
       @keyframes btn-shine {
         0% {
-          left: -60%;
+          transform: translateX(0) skewX(-20deg);
         }
         60%,
         100% {
-          left: 130%;
+          transform: translateX(475%) skewX(-20deg);
         }
       }
       .rsvp-btn .icon {
@@ -2179,7 +2223,7 @@
       <div class="cards">
         <div class="card">
           <div class="calendar-frame">
-            <img class="card-img" src="تنزيل (18).jpg" alt="" />
+            <img class="card-img" src="تنزيل (18).jpg" alt="" width="669" height="478" loading="lazy" decoding="async" />
             <svg
               class="date-mark"
               viewBox="0 0 24 24"
@@ -2200,7 +2244,7 @@
           </div>
         </div>
         <div class="card">
-          <img class="card-img" src="(16).jpg" alt="" />
+          <img class="card-img" src="(16).jpg" alt="" width="669" height="478" loading="lazy" decoding="async" />
           <div class="card-body">
             <h3>المكان</h3>
             <p>قاعة الماسة للاحتفالات<br />الرياض، المملكة العربية السعودية</p>
@@ -2388,8 +2432,9 @@
       <h2 class="section-title">موقع الصالة</h2>
       <div class="section-sub">قاعة الماسة للاحتفالات، الرياض</div>
       <div class="map-wrap">
+        <!-- تُحمَّل الخريطة فقط عند الاقتراب منها (سكربتات Google ثقيلة جدًا) -->
         <iframe
-          src="https://maps.google.com/maps?ll=24.8157617,46.873284&z=16&hl=ar&output=embed"
+          data-src="https://maps.google.com/maps?ll=24.8157617,46.873284&z=16&hl=ar&output=embed"
           loading="lazy"
           allowfullscreen
           referrerpolicy="no-referrer-when-downgrade"
@@ -2735,7 +2780,8 @@
     </footer>
 
     <!-- ===================== MUSIC ===================== -->
-    <audio id="bgMusic" src="music.weba" loop preload="auto"></audio>
+    <!-- ملف الموسيقى كبير (6MB): لا يُحمَّل مع الصفحة، بل عند التشغيل فقط -->
+    <audio id="bgMusic" data-src="music.weba" loop preload="none"></audio>
     <button
       type="button"
       class="music-toggle muted"
@@ -2791,6 +2837,7 @@
         );
       }
       function playMusic() {
+        if (!bgMusic.src) bgMusic.src = bgMusic.dataset.src;
         return bgMusic
           .play()
           .then(() => setMusicUI(true))
@@ -2818,7 +2865,11 @@
       firstInteraction.forEach((ev) =>
         document.addEventListener(ev, startOnInteraction, { passive: true }),
       );
-      playMusic(); // محاولة تشغيل تلقائي (تنجح في بعض المتصفحات)
+      // محاولة تشغيل تلقائي (تنجح في بعض المتصفحات) بعد اكتمال تحميل الصفحة،
+      // حتى لا ينافس ملف الموسيقى الصور والخطوط على الشبكة
+      window.addEventListener("load", () => {
+        if (!musicUserPaused && bgMusic.paused) playMusic();
+      });
       // إيقاف الموسيقى عند مغادرة الصفحة واستئنافها عند العودة
       document.addEventListener("visibilitychange", () => {
         if (document.hidden) {
@@ -3187,7 +3238,28 @@
         if (e.key === "ArrowRight") openWish(openIndex - 1);
       });
 
-      loadWishes();
+      // نؤجل جلب المباركات من Google حتى يقترب الزائر من القسم
+      const wishesObserver = new IntersectionObserver(
+        ([e]) => {
+          if (!e.isIntersecting) return;
+          wishesObserver.disconnect();
+          loadWishes();
+        },
+        { rootMargin: "800px 0px" },
+      );
+      wishesObserver.observe(document.getElementById("wishes"));
+
+      // ===== الخريطة: تحميل iframe الخاص بـ Google عند الاقتراب منها فقط =====
+      const mapFrame = document.querySelector(".map-wrap iframe");
+      const mapObserver = new IntersectionObserver(
+        ([e]) => {
+          if (!e.isIntersecting) return;
+          mapObserver.disconnect();
+          mapFrame.src = mapFrame.dataset.src;
+        },
+        { rootMargin: "300px 0px" },
+      );
+      mapObserver.observe(mapFrame);
 
       rsvpForm.addEventListener("submit", function (e) {
         e.preventDefault();
