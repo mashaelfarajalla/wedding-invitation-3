@@ -616,77 +616,48 @@
       .program-section {
         text-align: center;
       }
-      /* zigzag path: rows alternate sides, joined by curved gold arrows */
+      /* horizontal row of white cards, scrollable sideways */
       .timeline {
-        --row: 64px;
-        --gap: 8px;
-        --curve: 28px;
-        --step: 2s; /* delay between one item and the next */
-        position: relative;
-        max-width: 380px;
-        margin: var(--head-gap) auto 0;
-        padding: 0 var(--curve);
+        --step: 0.15s; /* delay between one card and the next */
+        display: flex;
+        gap: 14px;
+        margin: var(--head-gap) -16px 0;
+        padding: 6px 16px 18px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 16px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .timeline::-webkit-scrollbar {
+        display: none;
+      }
+      /* laptop: same width and edges as the two detail cards above */
+      @media (min-width: 701px) {
+        .timeline {
+          max-width: 666px;
+          margin-inline: auto;
+          padding-inline: 0;
+          scroll-padding-inline: 0;
+        }
+        /* narrower cards so about half of the next card peeks in */
+        .timeline .tl-item {
+          flex-basis: 136px;
+        }
       }
       .tl-item {
-        position: relative;
+        flex: 0 0 150px;
+        scroll-snap-align: start;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 12px;
-        height: var(--row);
-        margin-bottom: var(--gap);
-        text-align: right;
-      }
-      .tl-item:last-child {
-        margin-bottom: 0;
-      }
-      .tl-item:nth-child(even) {
-        flex-direction: row-reverse;
-        text-align: left;
-      }
-      /* horizontal line running from the text to the curve */
-      .tl-item::before {
-        content: "";
-        order: 1;
-        flex: 1;
-        min-width: 16px;
-        height: 1.5px;
-        background: var(--gold-light);
-        transform: scaleX(0);
-        transform-origin: right;
-        transition: transform 0.7s ease calc(var(--i) * var(--step) + 0.5s);
-      }
-      .tl-item:nth-child(even)::before {
-        transform-origin: left;
-      }
-      .tl-item:last-child::before {
-        background: linear-gradient(to left, var(--gold-light), transparent);
-      }
-      .tl-item:nth-child(even):last-child::before {
-        background: linear-gradient(to right, var(--gold-light), transparent);
-      }
-      /* U-turn curve down to the next row */
-      .tl-item::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        width: var(--curve);
-        height: calc(var(--row) + var(--gap));
-        border: 1.5px solid var(--gold-light);
-        opacity: 0;
-        transition: opacity 0.6s ease calc(var(--i) * var(--step) + 1.2s);
-      }
-      .tl-item:nth-child(odd)::after {
-        right: 100%;
-        border-right: none;
-        border-radius: var(--row) 0 0 var(--row);
-      }
-      .tl-item:nth-child(even)::after {
-        left: 100%;
-        border-left: none;
-        border-radius: 0 var(--row) var(--row) 0;
-      }
-      .tl-item:last-child::after {
-        display: none;
+        gap: 10px;
+        padding: 20px 14px;
+        background: #fff;
+        border: 1px solid rgba(201, 162, 106, 0.25);
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(60, 47, 39, 0.07);
+        text-align: center;
       }
       .tl-icon {
         flex: none;
@@ -699,39 +670,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        position: relative;
-        box-shadow: 0 6px 16px rgba(60, 47, 39, 0.08);
       }
       .tl-icon svg {
         width: 20px;
         height: 20px;
-      }
-      /* arrowhead where the curve meets the next icon */
-      .tl-item:not(:first-child) .tl-icon::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        width: 7px;
-        height: 7px;
-        border-top: 1.5px solid var(--gold-light);
-        border-right: 1.5px solid var(--gold-light);
-      }
-      .tl-item:nth-child(even) .tl-icon::before {
-        left: -11px;
-        transform: translateY(-50%) rotate(45deg);
-      }
-      .tl-item:nth-child(odd) .tl-icon::before {
-        right: -11px;
-        transform: translateY(-50%) rotate(-135deg);
-      }
-      .tl-body {
-        white-space: nowrap;
       }
       .tl-time {
         font-family: "Rakkas", serif;
         font-size: 18px;
         color: var(--gold);
         line-height: 1.3;
+        white-space: nowrap;
       }
       .tl-label {
         font-size: 13.5px;
@@ -739,7 +688,7 @@
         line-height: 1.5;
       }
 
-      /* draw the path step by step once the section scrolls into view */
+      /* cards fade in one after another once the section scrolls into view */
       .timeline.reveal {
         transform: none;
         opacity: 1;
@@ -768,34 +717,19 @@
       .tl-item:nth-child(8) {
         --i: 7;
       }
-      .tl-icon,
-      .tl-body {
+      .tl-item {
         opacity: 0;
-        transform: scale(0.6);
+        transform: translateY(12px);
         transition:
           opacity 0.5s ease calc(var(--i) * var(--step)),
-          transform 0.5s cubic-bezier(0.3, 1.5, 0.6, 1)
-            calc(var(--i) * var(--step));
+          transform 0.5s ease calc(var(--i) * var(--step));
       }
-      .tl-body {
-        transform: translateY(6px);
-      }
-      .timeline.in .tl-icon,
-      .timeline.in .tl-body {
+      .timeline.in .tl-item {
         opacity: 1;
         transform: none;
       }
-      .timeline.in .tl-item::before {
-        transform: scaleX(1);
-      }
-      .timeline.in .tl-item::after {
-        opacity: 1;
-      }
       @media (prefers-reduced-motion: reduce) {
-        .tl-icon,
-        .tl-body,
-        .tl-item::before,
-        .tl-item::after {
+        .tl-item {
           transition-delay: 0s !important;
         }
       }
@@ -2167,7 +2101,10 @@
         }
       }
     </style>
-  </head>
+  <link rel="icon" type="image/png" href="mersal-favicon.png">
+<link rel="apple-touch-icon" href="mersal-favicon.png">
+<style>.mersal-credit{margin:22px auto 0;font-size:12.5px;line-height:1.8;text-align:center;letter-spacing:.2px;opacity:.7;position:relative;z-index:2}.mersal-credit::before{content:"";display:block;width:36px;height:1px;margin:0 auto 12px;background:currentColor;opacity:.35}.mersal-credit a{color:inherit;text-decoration:none;white-space:nowrap;transition:opacity .2s}.mersal-credit a:hover{opacity:.6}.mersal-credit b{font-weight:700}.mersal-credit i{font-style:normal;margin:0 6px;opacity:.6}.mersal-credit span[dir]{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:.92em;letter-spacing:.4px}.mersal-credit .mc-tag{display:block;font-size:1.08em;margin-bottom:4px;letter-spacing:.3px}.mersal-credit a{display:inline-block;font-size:.95em;opacity:.85}</style>
+</head>
   <body>
     <!-- ===================== HERO ===================== -->
     <section class="hero">
@@ -2776,6 +2713,7 @@
           بإذن الله تعالى<span class="dot" aria-hidden="true"></span>29 أكتوبر 2026
         </div>
         <div class="foot-note">صُنعت هذه الدعوة بمحبة لهذا اليوم الخاص</div>
+        <p class="mersal-credit"><span class="mc-tag">لكل مناسبة، رسالة تستحق أن تصل</span><a href="https://instagram.com/mersal.invites" target="_blank" rel="noopener">بواسطة <b>مرسال</b><i aria-hidden="true">·</i><span dir="ltr">@mersal.invites</span></a></p>
       </div>
     </footer>
 
